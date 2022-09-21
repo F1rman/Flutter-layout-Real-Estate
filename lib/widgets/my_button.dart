@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../styles/style.dart';
 
-class myButton extends StatelessWidget {
-  const myButton({
+class MyButton extends StatelessWidget {
+  const MyButton({
     Key? key,
     this.text,
     this.onPressed,
@@ -13,21 +13,21 @@ class myButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 32),
+      margin: const EdgeInsets.only(top: 32),
       width: 164,
       height: 50,
       child: MaterialButton(
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        child: Container(
+        onPressed: onPressed,
+        child: SizedBox(
             width: 164,
             height: 50,
             child: Center(
                 child: Text(
               text,
-              style: text_button,
+              style: textButton,
             ))),
-        onPressed: onPressed,
       ),
     );
   }

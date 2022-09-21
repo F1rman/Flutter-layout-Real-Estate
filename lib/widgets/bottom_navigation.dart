@@ -2,8 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../styles/style.dart';
-
 class BottomNavigation extends StatelessWidget {
   const BottomNavigation({
     Key? key,
@@ -31,77 +29,86 @@ class BottomNavigation extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      child: MaterialButton(
-                        shape: const RoundedRectangleBorder(),
-                        onPressed: () => {},
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                                width: 24,
-                                child: Image.asset('assets/img/home-icon.png')),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              'Головна',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w500,
+                      child: Opacity(
+                        opacity: 1,
+                        child: MaterialButton(
+                          onPressed: () => {},
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                  width: 24,
+                                  child:
+                                      Image.asset('assets/img/home-icon.png')),
+                              const SizedBox(
+                                height: 5,
                               ),
-                            ),
-                          ],
+                              const Text(
+                                'Головна',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Expanded(
-                      child: MaterialButton(
-                        onPressed: () => {},
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                                width: 24,
-                                child:
-                                    Image.asset('assets/img/saved-icon.png')),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              'Збережені',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w500,
+                      child: Opacity(
+                        opacity: .4,
+                        child: MaterialButton(
+                          onPressed: () => {},
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                  width: 24,
+                                  child:
+                                      Image.asset('assets/img/saved-icon.png')),
+                              const SizedBox(
+                                height: 5,
                               ),
-                            ),
-                          ],
+                              const Text(
+                                'Збережені',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Expanded(
-                      child: MaterialButton(
-                        onPressed: () => {},
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                                width: 24,
-                                child: Image.asset(
-                                    'assets/img/contacts-icon.png')),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            const Text(
-                              'Контакти',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w500,
+                      child: Opacity(
+                        opacity: .4,
+                        child: MaterialButton(
+                          onPressed: () => {},
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                  width: 24,
+                                  child: Image.asset(
+                                      'assets/img/contacts-icon.png')),
+                              const SizedBox(
+                                height: 5,
                               ),
-                            ),
-                          ],
+                              const Text(
+                                'Контакти',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -64,7 +64,7 @@ class Splash extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          myButton(
+          MyButton(
               text: 'Досліджувати',
               onPressed: () => {
                     Navigator.of(context).push(
