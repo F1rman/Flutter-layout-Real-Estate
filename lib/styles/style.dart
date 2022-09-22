@@ -39,3 +39,11 @@ const categotyHeadline = TextStyle(
   height: 1.4,
   fontWeight: FontWeight.w600,
 );
+const modalHeader = TextStyle(
+  fontFamily: 'SFProDisplay',
+  color: Colors.white,
+  fontSize: 17,
+  letterSpacing: -.41,
+  height: 1.3,
+  fontWeight: FontWeight.w600,
+);
