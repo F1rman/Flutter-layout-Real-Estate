@@ -64,15 +64,19 @@ class Splash extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          MyButton(
-              text: 'Досліджувати',
-              onPressed: () => {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => Home(),
-                      ),
-                    )
-                  })
+          Container(
+            margin: const EdgeInsets.only(top: 32),
+            child: MyButton(
+                width: 164.0,
+                text: 'Досліджувати',
+                onPressed: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ),
+                      )
+                    }),
+          )
         ]),
       ],
     );

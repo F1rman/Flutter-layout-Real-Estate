@@ -7,14 +7,15 @@ class MyButton extends StatelessWidget {
     Key? key,
     this.text,
     this.onPressed,
+    this.width,
   }) : super(key: key);
   final onPressed;
   final text;
+  final width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 32),
-      width: 164,
+      width: width ?? double.infinity,
       height: 50,
       child: MaterialButton(
         color: Colors.white,
