@@ -39,6 +39,7 @@ dependencies:
   flutter_redux: ^0.10.0
   carousel_slider: ^4.1.1
   modal_bottom_sheet: ^2.1.2
+  dropdown_button2: ^1.8.1
   
 dev_dependencies:
   flutter_test:

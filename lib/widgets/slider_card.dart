@@ -60,42 +60,42 @@ class SliderCard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            const Positioned(
-                              bottom: 65,
-                              left: 24,
-                              child: Text(
-                                'ЖК Липки',
-                                style: TextStyle(
-                                  fontFamily: 'SFProDisplay',
-                                  color: Colors.white,
-                                  letterSpacing: -.41,
-                                  fontSize: 15,
-                                  height: 1.4,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                            const Positioned(
-                              bottom: 35,
-                              left: 24,
-                              child: Text(
-                                'Від 1499\$ місяць',
-                                style: TextStyle(
-                                  fontFamily: 'SFProDisplay',
-                                  color: Colors.white,
-                                  letterSpacing: -.35,
-                                  fontSize: 20,
-                                  height: 1.5,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       );
                     },
                   );
                 }).toList(),
+              ),
+              const Positioned(
+                bottom: 65,
+                left: 24,
+                child: Text(
+                  'ЖК Липки',
+                  style: TextStyle(
+                    fontFamily: 'SFProDisplay',
+                    color: Colors.white,
+                    letterSpacing: -.41,
+                    fontSize: 15,
+                    height: 1.4,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              const Positioned(
+                bottom: 35,
+                left: 24,
+                child: Text(
+                  'Від 1499\$ місяць',
+                  style: TextStyle(
+                    fontFamily: 'SFProDisplay',
+                    color: Colors.white,
+                    letterSpacing: -.35,
+                    fontSize: 20,
+                    height: 1.5,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
               ),
               Positioned(
                 top: 16,

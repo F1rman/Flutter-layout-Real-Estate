@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import 'dart:math' as math;
 import '../styles/style.dart';
+import 'lang_dropdown.dart';
 import 'location_modal.dart';
 
-class HomeFilterSearch extends StatelessWidget {
+class HomeFilterSearch extends StatefulWidget {
   const HomeFilterSearch({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<HomeFilterSearch> createState() => _HomeFilterSearchState();
+}
+
+var opened = false;
+
+class _HomeFilterSearchState extends State<HomeFilterSearch> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,14 +30,16 @@ class HomeFilterSearch extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(bottom: 10),
                   child: Text(
                     'Локація',
                     style: greyText,
                   ),
                 ),
-                GestureDetector(
-                  onTap: () => {
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      opened = !opened;
+                    });
                     showBarModalBottomSheet(
                       useRootNavigator: true,
                       topControl: Text(''),
@@ -36,7 +47,11 @@ class HomeFilterSearch extends StatelessWidget {
                       context: context,
                       backgroundColor: Colors.transparent,
                       builder: (context) => LocationModal(),
-                    )
+                    ).whenComplete(() {
+                      setState(() {
+                        opened = !opened;
+                      });
+                    });
                   },
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,10 +75,13 @@ class HomeFilterSearch extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Image.asset(
-                        'assets/img/arrow-down.png',
-                        width: 16,
-                      ),
+                      Transform.rotate(
+                        angle: !opened ? 0 : -math.pi,
+                        child: Image.asset(
+                          'assets/img/arrow-down.png',
+                          width: 16,
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -76,38 +94,7 @@ class HomeFilterSearch extends StatelessWidget {
                   'Мова',
                   style: greyText,
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 6),
-                  width: 57,
-                  height: 30,
-                  decoration: BoxDecoration(
-                      color: const Color(0xFF787880).withOpacity(.3),
-                      borderRadius: BorderRadius.circular(8)),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(right: 5),
-                        child: const Text(
-                          'UA',
-                          style: TextStyle(
-                            fontFamily: 'SFProDisplay',
-                            letterSpacing: -.41,
-                            color: Color(0xFFFFFFFF),
-                            fontSize: 17,
-                            height: 1.35,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      Image.asset(
-                        'assets/img/arrow-down.png',
-                        width: 16,
-                      ),
-                    ],
-                  ),
-                ),
+                LangDropDown(),
               ],
             ),
           ],
@@ -203,3 +190,4 @@ class HomeFilterSearch extends StatelessWidget {
     );
   }
 }
+// 
