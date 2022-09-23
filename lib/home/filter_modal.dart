@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../styles/style.dart';
 import '../widgets/my_button.dart';
+import 'home_after_filter.dart';
 import 'range_slider.dart';
 import 'toggle_button.dart';
 
@@ -342,7 +343,15 @@ class _FilterModalState extends State<FilterModal> {
             left: 15,
             bottom: 54,
             width: MediaQuery.of(context).size.width - 30,
-            child: MyButton(text: 'Шукати', onPressed: () => {}),
+            child: MyButton(
+                text: 'Шукати',
+                onPressed: () => {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => HomeFilterResults(),
+                        ),
+                      )
+                    }),
           )
         ],
       ),
