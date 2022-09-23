@@ -37,9 +37,12 @@ class SliderCard extends StatelessWidget {
                       return Container(
                         child: Stack(
                           children: [
-                            FittedBox(
-                              child: Image.asset('assets/img/slide_1.png'),
-                              fit: BoxFit.cover,
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: FittedBox(
+                                child: Image.asset('assets/img/slide_1.png'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                             Positioned(
                               bottom: -1,

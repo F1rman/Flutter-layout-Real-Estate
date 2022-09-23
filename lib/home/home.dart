@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../styles/style.dart';
 import '../widgets/bottom_navigation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../widgets/slider_card.dart';
 import '../widgets/tile_card_slider.dart';
 import 'home_search_filter.dart';
@@ -13,6 +12,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xFF070817),
       body: Stack(children: [
         ListView(
