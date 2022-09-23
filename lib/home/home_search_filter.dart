@@ -3,6 +3,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import 'dart:math' as math;
 import '../styles/style.dart';
+import 'filter_modal.dart';
 import 'lang_dropdown.dart';
 import 'location_modal.dart';
 
@@ -171,7 +172,16 @@ class _HomeFilterSearchState extends State<HomeFilterSearch> {
                 color: const Color(0xFF090A1B),
                 clipBehavior: Clip.antiAlias,
                 child: InkWell(
-                  onTap: () {}, // button pressed
+                  onTap: () {
+                    showBarModalBottomSheet(
+                      useRootNavigator: true,
+                      topControl: Text(''),
+                      expand: false,
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) => FilterModal(),
+                    );
+                  }, // button pressed
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
