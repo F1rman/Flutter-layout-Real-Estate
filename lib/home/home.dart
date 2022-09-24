@@ -1,3 +1,4 @@
+import 'package:buildings/item_page/item_page.dart';
 import 'package:flutter/material.dart';
 import '../styles/style.dart';
 import '../widgets/bottom_navigation.dart';
@@ -44,6 +45,13 @@ class Home extends StatelessWidget {
                             ],
                           ),
                           SliderCard(
+                              click: () => {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => ItemPage(),
+                                      ),
+                                    )
+                                  },
                               buttonCarouselController:
                                   buttonCarouselController),
                         ],

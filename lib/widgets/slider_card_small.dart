@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class SliderCardSmall extends StatelessWidget {
+class SliderCardSmall extends StatefulWidget {
   const SliderCardSmall({
     Key? key,
     required this.buttonCarouselController,
@@ -9,6 +9,12 @@ class SliderCardSmall extends StatelessWidget {
 
   final CarouselController buttonCarouselController;
 
+  @override
+  State<SliderCardSmall> createState() => _SliderCardSmallState();
+}
+
+class _SliderCardSmallState extends State<SliderCardSmall> {
+  var slideIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,12 +25,15 @@ class SliderCardSmall extends StatelessWidget {
           child: Stack(
             children: [
               CarouselSlider(
-                carouselController: buttonCarouselController,
+                carouselController: widget.buttonCarouselController,
                 options: CarouselOptions(
                     viewportFraction: 1,
                     height: 100.0,
                     onPageChanged: (index, reason) {
                       print(index);
+                      setState(() {
+                        slideIndex = index;
+                      });
                     }),
                 items: [1, 2, 3, 4, 5].map((i) {
                   return Builder(
@@ -32,9 +41,10 @@ class SliderCardSmall extends StatelessWidget {
                       return Stack(
                         fit: StackFit.expand,
                         children: [
-                          FittedBox(
-                            fit: BoxFit.fitHeight,
-                            child: Image.asset('assets/img/slide_1.png'),
+                          Image.asset(
+                            'assets/img/slide_1.png',
+                            fit: BoxFit.cover,
+                            height: 100,
                           ),
                           Positioned(
                             bottom: -1,
@@ -99,24 +109,16 @@ class SliderCardSmall extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
                     return GestureDetector(
-                      onTap: () =>
-                          buttonCarouselController.animateToPage(entry.key),
+                      onTap: () => widget.buttonCarouselController
+                          .animateToPage(entry.key),
                       child: Container(
-                        width: 3 == entry.key
-                            ? 5
-                            : 4 == entry.key
-                                ? 4
-                                : 6,
-                        height: 3 == entry.key
-                            ? 5
-                            : 4 == entry.key
-                                ? 4
-                                : 6,
+                        width: slideIndex.toDouble() == entry.key ? 6 : 5,
+                        height: slideIndex.toDouble() == entry.key ? 6 : 5,
                         margin: const EdgeInsets.symmetric(horizontal: 2.0),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.white
-                                .withOpacity(0 == entry.key ? 1 : 0.4)),
+                            color: Colors.white.withOpacity(
+                                slideIndex == entry.key ? 1 : 0.4)),
                       ),
                     );
                   }).toList(),

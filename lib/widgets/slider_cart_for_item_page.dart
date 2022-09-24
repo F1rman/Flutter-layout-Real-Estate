@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../styles/style.dart';
 
-class SliderCard extends StatefulWidget {
-  const SliderCard({
+class SliderCardItemPage extends StatefulWidget {
+  const SliderCardItemPage({
     Key? key,
     required this.buttonCarouselController,
     this.click,
@@ -14,10 +14,10 @@ class SliderCard extends StatefulWidget {
   final click;
 
   @override
-  State<SliderCard> createState() => _SliderCardState();
+  State<SliderCardItemPage> createState() => _SliderCardItemPageState();
 }
 
-class _SliderCardState extends State<SliderCard> {
+class _SliderCardItemPageState extends State<SliderCardItemPage> {
   var slideIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _SliderCardState extends State<SliderCard> {
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
                 color: const Color(0xFF787880).withOpacity(.3),
-                borderRadius: BorderRadius.circular(8)),
+                borderRadius: BorderRadius.circular(24)),
             child: Stack(
               children: [
                 CarouselSlider(
@@ -37,7 +37,7 @@ class _SliderCardState extends State<SliderCard> {
                   options: CarouselOptions(
                       padEnds: false,
                       viewportFraction: 1,
-                      height: 246.0,
+                      height: 300.0,
                       onPageChanged: (index, reason) {
                         print(index);
                         setState(() {
@@ -53,7 +53,7 @@ class _SliderCardState extends State<SliderCard> {
                               Image.asset(
                                 'assets/img/slide_1.png',
                                 fit: BoxFit.cover,
-                                height: 246,
+                                height: 300,
                               ),
                               Positioned(
                                 bottom: -1,
