@@ -84,7 +84,7 @@ class HomeFilterResults extends StatelessWidget {
             ),
           ],
         ),
-        const BottomNavigation(),
+        BottomNavigation(),
       ]),
     );
   }

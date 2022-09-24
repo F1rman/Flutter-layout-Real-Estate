@@ -6,11 +6,9 @@ import '../styles/style.dart';
 class SliderCardItemPage extends StatefulWidget {
   const SliderCardItemPage({
     Key? key,
-    required this.buttonCarouselController,
     this.click,
   }) : super(key: key);
 
-  final CarouselController buttonCarouselController;
   final click;
 
   @override
@@ -18,6 +16,7 @@ class SliderCardItemPage extends StatefulWidget {
 }
 
 class _SliderCardItemPageState extends State<SliderCardItemPage> {
+  CarouselController buttonCarouselController = CarouselController();
   var slideIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
             child: Stack(
               children: [
                 CarouselSlider(
-                  carouselController: widget.buttonCarouselController,
+                  carouselController: buttonCarouselController,
                   options: CarouselOptions(
                       padEnds: false,
                       viewportFraction: 1,
@@ -61,7 +60,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                                 child: IgnorePointer(
                                   ignoring: true,
                                   child: Container(
-                                    height: 123,
+                                    height: 144,
                                     width:
                                         MediaQuery.of(context).size.width + 2,
                                     decoration: const BoxDecoration(
@@ -91,7 +90,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                       fontFamily: 'SFProDisplay',
                       color: Colors.white,
                       letterSpacing: -.41,
-                      fontSize: 15,
+                      fontSize: 17,
                       height: 1.4,
                       fontWeight: FontWeight.w600,
                     ),
@@ -106,9 +105,31 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                       fontFamily: 'SFProDisplay',
                       color: Colors.white,
                       letterSpacing: -.35,
-                      fontSize: 20,
+                      fontSize: 22,
                       height: 1.5,
                       fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 16,
+                  left: 16,
+                  child: Container(
+                    width: 44,
+                    height: 44,
+                    child: Material(
+                      borderRadius: BorderRadius.circular(8),
+                      color: const Color(0xFF090A1B),
+                      clipBehavior: Clip.antiAlias,
+                      child: InkWell(
+                        onTap: () => {Navigator.pop(context)},
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Image.asset(
+                            'assets/img/back.png',
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -119,16 +140,16 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                     children: [
                       Container(
                         width: 77,
-                        height: 32,
+                        height: 44,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8),
                           color: const Color(0xFF090A1B),
                           border: Border.all(
                             color: const Color(0xFF222230),
                           ),
                         ),
                         child: Material(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8),
                           color: const Color(0xFF090A1B),
                           clipBehavior: Clip.antiAlias,
                           child: InkWell(
@@ -138,7 +159,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                               children: [
                                 Image.asset(
                                   'assets/img/map.png',
-                                  width: 15,
+                                  width: 20,
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(left: 5),
@@ -148,7 +169,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                                       fontFamily: 'SFProDisplay',
                                       letterSpacing: -.24,
                                       color: Color(0xFFFFFFFF),
-                                      fontSize: 11,
+                                      fontSize: 13,
                                       height: 1.35,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -161,8 +182,8 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 7),
-                        width: 32,
-                        height: 32,
+                        width: 44,
+                        height: 44,
                         child: Material(
                           borderRadius: BorderRadius.circular(8),
                           color: const Color(0xFF090A1B),
@@ -174,7 +195,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                               children: <Widget>[
                                 Image.asset(
                                   'assets/img/saved-icon.png',
-                                  width: 15,
+                                  width: 20,
                                 ), // icon
                               ],
                             ),
@@ -191,8 +212,8 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
                       return GestureDetector(
-                        onTap: () => widget.buttonCarouselController
-                            .animateToPage(entry.key),
+                        onTap: () =>
+                            buttonCarouselController.animateToPage(entry.key),
                         child: Container(
                           width: slideIndex.toDouble() == entry.key ? 6 : 5,
                           height: slideIndex.toDouble() == entry.key ? 6 : 5,

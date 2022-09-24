@@ -1,12 +1,29 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+import '../redux/redux_service.dart';
+
+class Items {
+  final String name;
+  final String icon;
+
+  Items(
+    this.name,
+    this.icon,
+  );
+}
+
+final items = [
+  Items('Головна', 'home-icon'),
+  Items('Збережені', 'saved-icon'),
+  Items('Контакти', 'contacts-icon'),
+];
 
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation({
-    Key? key,
-  }) : super(key: key);
-
+  BottomNavigation({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -28,93 +45,59 @@ class BottomNavigation extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Expanded(
-                      child: Opacity(
-                        opacity: 1,
-                        child: MaterialButton(
-                          onPressed: () => {},
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                  width: 24,
-                                  child:
-                                      Image.asset('assets/img/home-icon.png')),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              const Text(
-                                'Головна',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Opacity(
-                        opacity: .4,
-                        child: MaterialButton(
-                          onPressed: () => {},
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                  width: 24,
-                                  child:
-                                      Image.asset('assets/img/saved-icon.png')),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              const Text(
-                                'Збережені',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Opacity(
-                        opacity: .4,
-                        child: MaterialButton(
-                          onPressed: () => {},
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                  width: 24,
-                                  child: Image.asset(
-                                      'assets/img/contacts-icon.png')),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              const Text(
-                                'Контакти',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
+                    for (var item in items) MenuItem(item: item),
                   ],
                 )),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class MenuItem extends StatelessWidget {
+  MenuItem({
+    Key? key,
+    required this.item,
+  }) : super(key: key);
+
+  final Items item;
+  final store = Store(ReduxActions.counterUpdate, initialState: 0);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Opacity(
+        opacity: 1,
+        child: StoreConnector<int, VoidCallback>(
+          converter: (store) {
+            print(items.indexOf(item));
+            return () => store.dispatch(CounterActions.Increment);
+          },
+          builder: (context, callback) {
+            return MaterialButton(
+              onPressed: callback,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                      width: 24,
+                      child: Image.asset('assets/img/${item.icon}.png')),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    item.name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );
