@@ -5,6 +5,7 @@ abstract class Routes {
   static const home = '/home';
   static const splash = '/splash';
   static const saved = '/saved';
+  static const feedback = '/feedback';
 }
 
 // abstract class _Paths {

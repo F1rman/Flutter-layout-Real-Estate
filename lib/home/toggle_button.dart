@@ -10,10 +10,9 @@ class ToggleButton extends StatefulWidget {
 }
 
 class _ToggleButtonState extends State<ToggleButton> {
-  @override
+  var posBtn = 0.0;
   @override
   Widget build(BuildContext context) {
-    var posBtn = 0.0;
     var size = MediaQuery.of(context).size;
     var widthButton = (size.width - 34) / 2;
     return Container(

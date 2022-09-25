@@ -22,7 +22,9 @@ class SavedView extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(
+                left: 15,
+              ),
               child: Column(
                 children: [
                   for (var i = 0; i < 15; i++)

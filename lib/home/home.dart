@@ -72,9 +72,14 @@ class Home extends StatelessWidget {
                           ],
                         ),
                         Column(
-                          children: const [
-                            TileCardSlider(),
-                            TileCardSlider(),
+                          children: [
+                            Container(
+                                margin: const EdgeInsets.only(bottom: 12),
+                                child: const TileCardSlider()),
+                            Container(
+                              margin: const EdgeInsets.only(bottom: 12),
+                              child: const TileCardSlider(),
+                            ),
                           ],
                         ),
                       ],

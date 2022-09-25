@@ -2,6 +2,7 @@ import 'package:buildings/styles/style.dart';
 import 'package:buildings/widgets/my_divider.dart';
 import 'package:buildings/widgets/my_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ContactView extends StatelessWidget {
   const ContactView({super.key});
@@ -166,7 +167,7 @@ class ContactView extends StatelessWidget {
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)),
-                    onPressed: () => {},
+                    onPressed: () => {Get.toNamed('/feedback')},
                     child: const Center(
                         child: Text(
                       'Зворотній зв\'язок',

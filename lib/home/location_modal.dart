@@ -127,6 +127,7 @@ class LocationModal extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 24),
                   child: MyButton(
+                      width: double.infinity,
                       text: 'Зберегти зміни',
                       onPressed: () => {Navigator.pop(context)}),
                 )
