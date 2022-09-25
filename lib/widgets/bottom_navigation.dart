@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
-import '../redux/redux_service.dart';
+import 'package:get/get.dart';
+
+import '../controllers/navigation_controller.dart';
 
 class Items {
   final String name;
@@ -56,27 +56,21 @@ class BottomNavigation extends StatelessWidget {
 }
 
 class MenuItem extends StatelessWidget {
+  final Controller c = Get.find();
   MenuItem({
     Key? key,
     required this.item,
   }) : super(key: key);
 
   final Items item;
-  final store = Store(ReduxActions.counterUpdate, initialState: 0);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Opacity(
-        opacity: 1,
-        child: StoreConnector<int, VoidCallback>(
-          converter: (store) {
-            print(items.indexOf(item));
-            return () => store.dispatch(CounterActions.Increment);
-          },
-          builder: (context, callback) {
-            return MaterialButton(
-              onPressed: callback,
+      child: Obx(() => Opacity(
+            opacity: c.index.value == items.indexOf(item) ? 1 : .4,
+            child: MaterialButton(
+              onPressed: () => {c.index.value = items.indexOf(item)},
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -96,10 +90,8 @@ class MenuItem extends StatelessWidget {
                   ),
                 ],
               ),
-            );
-          },
-        ),
-      ),
+            ),
+          )),
     );
   }
 }
