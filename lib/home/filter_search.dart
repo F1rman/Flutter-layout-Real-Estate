@@ -28,7 +28,7 @@ class SearchFilter extends StatelessWidget {
             child: Stack(
               alignment: Alignment.centerLeft,
               children: [
-                Positioned(
+                const Positioned(
                   left: 24,
                   child: Opacity(
                     opacity: .4,
@@ -83,16 +83,16 @@ class SearchFilter extends StatelessWidget {
               onTap: () {
                 showBarModalBottomSheet(
                   useRootNavigator: true,
-                  topControl: Text(''),
+                  topControl: const Text(''),
                   expand: false,
                   context: context,
                   backgroundColor: Colors.transparent,
-                  builder: (context) => FilterModal(),
+                  builder: (context) => const FilterModal(),
                 );
               }, // button pressed
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: const [
                   Icon(
                     MyIcons.filter,
                     color: Colors.white,

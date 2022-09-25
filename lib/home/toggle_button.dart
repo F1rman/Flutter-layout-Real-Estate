@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../styles/style.dart';
-
 class ToggleButton extends StatefulWidget {
   const ToggleButton({
     Key? key,
@@ -13,29 +11,30 @@ class ToggleButton extends StatefulWidget {
 
 class _ToggleButtonState extends State<ToggleButton> {
   @override
-  var posBtn = 0.0;
+  @override
   Widget build(BuildContext context) {
+    var posBtn = 0.0;
     var size = MediaQuery.of(context).size;
     var widthButton = (size.width - 34) / 2;
     return Container(
       height: 32,
       width: double.infinity,
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 10,
       ),
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: Color(0xff787880).withOpacity(.3),
+        color: const Color(0xff787880).withOpacity(.3),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Stack(
         children: [
           AnimatedPositioned(
             curve: Curves.ease,
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             left: posBtn,
             child: Container(
-              margin: EdgeInsets.all(1),
+              margin: const EdgeInsets.all(1),
               height: 30,
               width: widthButton,
               decoration: BoxDecoration(
@@ -55,7 +54,7 @@ class _ToggleButtonState extends State<ToggleButton> {
               ),
             ),
             child: Container(
-              padding: EdgeInsets.all(2),
+              padding: const EdgeInsets.all(2),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -68,13 +67,15 @@ class _ToggleButtonState extends State<ToggleButton> {
                         setState(() {
                           posBtn = 0;
                         });
-                        print(posBtn);
+                        // print(posBtn);
                       },
                       child: Text(
                         'Покупка',
                         style: TextStyle(
                           fontFamily: 'SFProDisplay',
-                          color: posBtn == 0 ? Color(0xFF070817) : Colors.white,
+                          color: posBtn == 0
+                              ? const Color(0xFF070817)
+                              : Colors.white,
                           fontSize: 13,
                           height: 1,
                           fontWeight: FontWeight.w500,
@@ -90,7 +91,7 @@ class _ToggleButtonState extends State<ToggleButton> {
                       onPressed: () {
                         setState(() {
                           posBtn = widthButton;
-                          print(posBtn);
+                          // print(posBtn);
                         });
                       },
                       child: Text(
@@ -98,7 +99,7 @@ class _ToggleButtonState extends State<ToggleButton> {
                         style: TextStyle(
                           fontFamily: 'SFProDisplay',
                           color: posBtn == widthButton
-                              ? Color(0xFF070817)
+                              ? const Color(0xFF070817)
                               : Colors.white,
                           fontSize: 13,
                           height: 1,

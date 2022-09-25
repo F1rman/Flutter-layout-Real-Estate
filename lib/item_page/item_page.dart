@@ -1,9 +1,7 @@
 import 'package:buildings/item_page/rent_option.dart';
-import 'package:buildings/styles/style.dart';
 import 'package:buildings/widgets/slider_cart_for_item_page.dart';
 import 'package:flutter/material.dart';
 import '../widgets/bottom_navigation.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 import '../widgets/my_divider.dart';
 import 'about.dart';
@@ -11,7 +9,7 @@ import 'about_company.dart';
 import 'contacts.dart';
 
 class ItemPage extends StatelessWidget {
-  ItemPage({super.key});
+  const ItemPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +27,7 @@ class ItemPage extends StatelessWidget {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           SliderCardItemPage(),
                           RentOption(),
                           MyDivider(
@@ -49,7 +47,7 @@ class ItemPage extends StatelessWidget {
             ),
           ],
         ),
-        BottomNavigation(),
+        const BottomNavigation(),
       ]),
     );
   }

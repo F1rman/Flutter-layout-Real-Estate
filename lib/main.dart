@@ -3,11 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'routes/app_pages.dart';
-import 'splash/splash.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,10 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(),
-      initialRoute: Routes.SPLASH,
-      // initialRoute: Routes.DASHBOARD,
+      initialRoute: Routes.splash,
       getPages: AppPages.routes,
     );
   }

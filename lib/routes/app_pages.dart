@@ -9,11 +9,11 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const initial = Routes.home;
 
   static final routes = [
-    GetPage(name: Routes.SPLASH, page: () => Splash()),
-    GetPage(name: Routes.HOME, page: () => HomeView()),
-    GetPage(name: Routes.SAVED, page: () => SavedView()),
+    GetPage(name: Routes.splash, page: () => const Splash()),
+    GetPage(name: Routes.home, page: () => HomeView()),
+    GetPage(name: Routes.saved, page: () => const SavedView()),
   ];
 }

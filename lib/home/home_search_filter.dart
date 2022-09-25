@@ -31,11 +31,9 @@ class _HomeFilterSearchState extends State<HomeFilterSearch> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  child: Text(
-                    'Локація',
-                    style: greyText,
-                  ),
+                Text(
+                  'Локація',
+                  style: greyText,
                 ),
                 TextButton(
                   onPressed: () {
@@ -44,11 +42,11 @@ class _HomeFilterSearchState extends State<HomeFilterSearch> {
                     });
                     showBarModalBottomSheet(
                       useRootNavigator: true,
-                      topControl: Text(''),
+                      topControl: const Text(''),
                       expand: false,
                       context: context,
                       backgroundColor: Colors.transparent,
-                      builder: (context) => LocationModal(),
+                      builder: (context) => const LocationModal(),
                     ).whenComplete(() {
                       setState(() {
                         opened = !opened;
@@ -59,7 +57,7 @@ class _HomeFilterSearchState extends State<HomeFilterSearch> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         MyIcons.location,
                         color: Color(0xffFF9176),
                         size: 20,
@@ -97,12 +95,12 @@ class _HomeFilterSearchState extends State<HomeFilterSearch> {
                   'Мова',
                   style: greyText,
                 ),
-                LangDropDown(),
+                const LangDropDown(),
               ],
             ),
           ],
         ),
-        SearchFilter(),
+        const SearchFilter(),
       ],
     );
   }

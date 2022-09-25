@@ -6,6 +6,14 @@ const h1 = TextStyle(
   fontSize: 28,
   fontWeight: FontWeight.w700,
 );
+const h2 = TextStyle(
+  fontFamily: 'SFProDisplay',
+  color: Colors.white,
+  fontSize: 22,
+  height: 1.1,
+  letterSpacing: .38,
+  fontWeight: FontWeight.w600,
+);
 
 const text = TextStyle(
   fontFamily: 'SFProDisplay',

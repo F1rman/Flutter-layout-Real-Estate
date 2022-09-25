@@ -22,4 +22,5 @@ class MyIcons {
   static const IconData call = IconData(0xe810, fontFamily: _kFontFam);
   static const IconData sms = IconData(0xe811, fontFamily: _kFontFam);
   static const IconData bathroom = IconData(0xe80f, fontFamily: _kFontFam);
+  static const IconData chevron = IconData(0xe812, fontFamily: _kFontFam);
 }

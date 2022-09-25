@@ -22,7 +22,7 @@ final items = [
 ];
 
 class BottomNavigation extends StatelessWidget {
-  BottomNavigation({
+  const BottomNavigation({
     super.key,
   });
   @override

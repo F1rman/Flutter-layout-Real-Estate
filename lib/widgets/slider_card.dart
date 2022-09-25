@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../styles/style.dart';
-
+// ignore: must_be_immutable
 class SliderCard extends StatefulWidget {
   SliderCard({
     Key? key,
@@ -10,6 +9,7 @@ class SliderCard extends StatefulWidget {
   }) : super(key: key);
 
   CarouselController buttonCarouselController = CarouselController();
+  // ignore: prefer_typing_uninitialized_variables
   final click;
 
   @override
@@ -38,7 +38,7 @@ class _SliderCardState extends State<SliderCard> {
                       viewportFraction: 1,
                       height: 246.0,
                       onPageChanged: (index, reason) {
-                        print(index);
+                        // print(index);
                         setState(() {
                           slideIndex = index;
                         });
@@ -46,36 +46,33 @@ class _SliderCardState extends State<SliderCard> {
                   items: [1, 2, 3, 4, 5].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
-                        return Container(
-                          child: Stack(
-                            children: [
-                              Image.asset(
-                                'assets/img/slide_1.png',
-                                fit: BoxFit.cover,
-                                height: 246,
-                              ),
-                              Positioned(
-                                bottom: -1,
-                                left: -1,
-                                child: IgnorePointer(
-                                  ignoring: true,
-                                  child: Container(
-                                    height: 123,
-                                    width:
-                                        MediaQuery.of(context).size.width + 2,
-                                    decoration: const BoxDecoration(
-                                        gradient: LinearGradient(
-                                            colors: [
-                                          Colors.transparent,
-                                          Color(0xFF070817),
-                                        ],
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter)),
-                                  ),
+                        return Stack(
+                          children: [
+                            Image.asset(
+                              'assets/img/slide_1.png',
+                              fit: BoxFit.cover,
+                              height: 246,
+                            ),
+                            Positioned(
+                              bottom: -1,
+                              left: -1,
+                              child: IgnorePointer(
+                                ignoring: true,
+                                child: Container(
+                                  height: 123,
+                                  width: MediaQuery.of(context).size.width + 2,
+                                  decoration: const BoxDecoration(
+                                      gradient: LinearGradient(
+                                          colors: [
+                                        Colors.transparent,
+                                        Color(0xFF070817),
+                                      ],
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter)),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         );
                       },
                     );
@@ -140,7 +137,7 @@ class _SliderCardState extends State<SliderCard> {
                                   width: 15,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(left: 5),
+                                  margin: const EdgeInsets.only(left: 5),
                                   child: const Text(
                                     'Карта',
                                     style: TextStyle(

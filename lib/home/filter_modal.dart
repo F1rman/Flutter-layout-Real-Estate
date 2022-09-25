@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../styles/style.dart';
 import '../widgets/my_button.dart';
+import '../widgets/my_icons.dart';
 import 'home_after_filter.dart';
 import 'range_slider.dart';
 import 'toggle_button.dart';
@@ -76,7 +77,7 @@ class _FilterModalState extends State<FilterModal> {
                           child: Text(
                             'Очистити',
                             style: modalHeader.copyWith(
-                                color: Color(0xFF0A84FF),
+                                color: const Color(0xFF0A84FF),
                                 fontWeight: FontWeight.w400,
                                 fontSize: 17),
                           ),
@@ -99,7 +100,7 @@ class _FilterModalState extends State<FilterModal> {
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                   child: Column(
                     children: [
-                      ToggleButton(),
+                      const ToggleButton(),
                       Container(
                         margin: const EdgeInsets.only(top: 20),
                         child: Row(
@@ -109,14 +110,14 @@ class _FilterModalState extends State<FilterModal> {
                               'Ціна за місяць',
                               style: greyText,
                             ),
-                            Text(
+                            const Text(
                               '\$650 - \$1400',
                               style: text,
                             ),
                           ],
                         ),
                       ),
-                      CustomRangeSlider(),
+                      const CustomRangeSlider(),
                       Row(
                         children: [
                           Text(
@@ -185,7 +186,7 @@ class _FilterModalState extends State<FilterModal> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20),
+                        margin: const EdgeInsets.only(top: 20),
                         child: Row(
                           children: [
                             Text(
@@ -199,17 +200,19 @@ class _FilterModalState extends State<FilterModal> {
                         children: [
                           for (var item in romArr)
                             Container(
-                              margin: EdgeInsets.only(top: 12, right: 8),
+                              margin: const EdgeInsets.only(top: 12, right: 8),
                               child: Row(
                                 children: [
                                   Container(
-                                    constraints: BoxConstraints(minWidth: 28),
+                                    constraints:
+                                        const BoxConstraints(minWidth: 28),
                                     height: 28,
                                     child: Material(
                                       borderRadius: BorderRadius.circular(8),
                                       color: selected.contains(item.toString())
                                           ? Colors.white
-                                          : Color(0x787880).withOpacity(.3),
+                                          : const Color(0xff787880)
+                                              .withOpacity(.3),
                                       child: InkWell(
                                         borderRadius: BorderRadius.circular(8),
                                         onTap: () {
@@ -223,7 +226,7 @@ class _FilterModalState extends State<FilterModal> {
                                           });
                                         },
                                         child: Container(
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                               horizontal: 8, vertical: 5),
                                           child: Text(
                                             item.toString(),
@@ -244,7 +247,7 @@ class _FilterModalState extends State<FilterModal> {
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom: 12),
+                        margin: const EdgeInsets.only(top: 20, bottom: 12),
                         child: Row(
                           children: [
                             Text(
@@ -257,7 +260,7 @@ class _FilterModalState extends State<FilterModal> {
                       Row(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(right: 12),
+                            margin: const EdgeInsets.only(right: 12),
                             width: 127,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 10),
@@ -312,24 +315,25 @@ class _FilterModalState extends State<FilterModal> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(
+                            margin: const EdgeInsets.only(
                               left: 21,
                             ),
                             child: InkWell(
                               borderRadius: BorderRadius.circular(100),
-                              onTap: () => {print('clear')},
-                              child: Container(
-                                child: Image.asset(
-                                  'assets/img/clear_input.png',
-                                  width: 17,
-                                ),
+                              onTap: () => {
+                                // print('clear')
+                              },
+                              child: Icon(
+                                MyIcons.crossIcon,
+                                color: Colors.white.withOpacity(.4),
+                                size: 17,
                               ),
                             ),
                           ),
                         ],
                       ),
                       MediaQuery.of(context).viewInsets.bottom != 0
-                          ? SizedBox(
+                          ? const SizedBox(
                               height: 600,
                             )
                           : Container(),

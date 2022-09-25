@@ -13,12 +13,12 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF070817),
+      backgroundColor: const Color(0xFF070817),
       body: ListView(
         children: [
           Column(children: [
             Stack(children: [
-              Positioned(
+              const Positioned(
                   left: 34,
                   top: 56,
                   child: Icon(
@@ -45,10 +45,10 @@ class Splash extends StatelessWidget {
                 bottom: 0,
                 child: RichText(
                   textAlign: TextAlign.center,
-                  text: TextSpan(
+                  text: const TextSpan(
                     text: 'Об’єкт твоєї ',
                     style: h1,
-                    children: const <TextSpan>[
+                    children: <TextSpan>[
                       TextSpan(
                           text: 'мрії',
                           style: TextStyle(color: Color(0xFFFF9176))),
@@ -58,7 +58,7 @@ class Splash extends StatelessWidget {
               ),
             ]),
             Container(
-              margin: EdgeInsets.only(top: 16),
+              margin: const EdgeInsets.only(top: 16),
               child: Text(
                 'Знайдіть ідеальний простір вашої \n мрії всього за кілька кліків',
                 style: text.copyWith(),

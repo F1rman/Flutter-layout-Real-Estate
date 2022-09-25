@@ -32,7 +32,7 @@ class _LangDropDownState extends State<LangDropDown> {
           buttonDecoration: BoxDecoration(
               color: const Color(0xFF787880).withOpacity(.3),
               borderRadius: BorderRadius.circular(8)),
-          customButton: Container(
+          customButton: SizedBox(
             width: 57,
             height: 30,
             child: Row(
@@ -43,7 +43,7 @@ class _LangDropDownState extends State<LangDropDown> {
                   margin: const EdgeInsets.only(right: 5),
                   child: Text(
                     selectedValue ?? '',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: 'SFProDisplay',
                       letterSpacing: -.41,
                       color: Color(0xFFFFFFFF),
@@ -64,26 +64,26 @@ class _LangDropDownState extends State<LangDropDown> {
             ),
           ),
           dropdownWidth: 57,
-          dropdownPadding: EdgeInsets.all(0),
-          itemPadding: EdgeInsets.only(left: 0, right: 0),
+          dropdownPadding: const EdgeInsets.all(0),
+          itemPadding: const EdgeInsets.only(left: 0, right: 0),
           dropdownDecoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: Color(0xFF292A37),
+            color: const Color(0xFF292A37),
           ),
-          hint: Text('Select Item', style: text),
+          hint: const Text('Select Item', style: text),
           items: items
               .map((item) => DropdownMenuItem<String>(
                     value: item,
                     child: Container(
-                      padding: EdgeInsets.only(top: 5, left: 8),
+                      padding: const EdgeInsets.only(top: 5, left: 8),
                       width: double.infinity,
                       height: 30,
                       color: selectedValue == item
-                          ? Color(0xFFFF9176)
+                          ? const Color(0xFFFF9176)
                           : Colors.transparent,
                       child: Text(
                         item,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontFamily: 'SFProDisplay',
                           letterSpacing: -.41,
                           color: Color(0xFFFFFFFF),

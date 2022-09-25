@@ -1,15 +1,15 @@
 import 'package:buildings/widgets/slider_card_small.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../styles/style.dart';
 import 'my_icons.dart';
 
 class TileCardSlider extends StatelessWidget {
-  TileCardSlider({
+  const TileCardSlider({
     Key? key,
     this.isSavedPage = false,
   }) : super(key: key);
+  // ignore: prefer_typing_uninitialized_variables
   final isSavedPage;
   @override
   Widget build(BuildContext context) {
@@ -30,15 +30,15 @@ class TileCardSlider extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(bottom: 5),
+                    padding: const EdgeInsets.only(bottom: 5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'ЖК Фортуна',
                           style: TextStyle(
@@ -67,7 +67,7 @@ class TileCardSlider extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         MyIcons.location,
                         color: Color(0xffFF9176),
                         size: 15,
@@ -84,20 +84,20 @@ class TileCardSlider extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           right: 10,
                           top: 12,
                         ),
                         child: Row(
                           children: [
-                            Icon(
+                            const Icon(
                               MyIcons.roms,
                               color: Colors.white,
                               size: 15,
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 7),
-                              child: Text(
+                              margin: const EdgeInsets.only(left: 7),
+                              child: const Text(
                                 '3км',
                                 style: TextStyle(
                                   fontFamily: 'SFProDisplay',
@@ -112,19 +112,19 @@ class TileCardSlider extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 12,
                         ),
                         child: Row(
                           children: [
-                            Icon(
+                            const Icon(
                               MyIcons.maximize,
                               color: Colors.white,
                               size: 15,
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 7),
-                              child: Text(
+                              margin: const EdgeInsets.only(left: 7),
+                              child: const Text(
                                 '104 м²',
                                 style: TextStyle(
                                   fontFamily: 'SFProDisplay',

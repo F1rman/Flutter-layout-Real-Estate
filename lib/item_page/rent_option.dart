@@ -12,7 +12,7 @@ class RentOption extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.only(top: 20, bottom: 6),
+          margin: const EdgeInsets.only(top: 20, bottom: 6),
           child: Row(
             children: [
               Text(
@@ -25,7 +25,7 @@ class RentOption extends StatelessWidget {
         Row(
           children: [
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 right: 14,
                 top: 12,
               ),
@@ -36,8 +36,8 @@ class RentOption extends StatelessWidget {
                     height: 26,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 12),
-                    child: Text(
+                    margin: const EdgeInsets.only(left: 12),
+                    child: const Text(
                       '3км',
                       style: TextStyle(
                         fontFamily: 'SFProDisplay',
@@ -52,7 +52,7 @@ class RentOption extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 right: 14,
                 top: 12,
               ),
@@ -63,8 +63,8 @@ class RentOption extends StatelessWidget {
                     height: 26,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 12),
-                    child: Text(
+                    margin: const EdgeInsets.only(left: 12),
+                    child: const Text(
                       '56 м²',
                       style: TextStyle(
                         fontFamily: 'SFProDisplay',
@@ -79,7 +79,7 @@ class RentOption extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 right: 14,
                 top: 12,
               ),
@@ -90,8 +90,8 @@ class RentOption extends StatelessWidget {
                     height: 32,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 12),
-                    child: Text(
+                    margin: const EdgeInsets.only(left: 12),
+                    child: const Text(
                       '1 Душова кабіна',
                       style: TextStyle(
                         fontFamily: 'SFProDisplay',

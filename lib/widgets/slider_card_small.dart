@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SliderCardSmall extends StatefulWidget {
   SliderCardSmall({
     Key? key,
@@ -30,7 +33,7 @@ class _SliderCardSmallState extends State<SliderCardSmall> {
                     viewportFraction: 1,
                     height: 100.0,
                     onPageChanged: (index, reason) {
-                      print(index);
+                      // print(index);
                       setState(() {
                         slideIndex = index;
                       });

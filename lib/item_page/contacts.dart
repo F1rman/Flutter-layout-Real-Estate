@@ -12,15 +12,15 @@ class Contacts extends StatelessWidget {
     return Column(
       children: [
         MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
-          color: Color(0xFF252525).withOpacity(.5),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
+          color: const Color(0xFF252525).withOpacity(.5),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           onPressed: () => {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 '+380 68 021 83-22',
                 style: text,
               ),
@@ -32,15 +32,15 @@ class Contacts extends StatelessWidget {
           ),
         ),
         MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
-          color: Color(0xFF252525).withOpacity(.5),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
+          color: const Color(0xFF252525).withOpacity(.5),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           onPressed: () => {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Проспект Гагаріна 13/1',
                 style: text,
               ),
@@ -52,15 +52,15 @@ class Contacts extends StatelessWidget {
           ),
         ),
         MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
-          color: Color(0xFF252525).withOpacity(.5),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
+          color: const Color(0xFF252525).withOpacity(.5),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           onPressed: () => {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'orendkakyivua@mail.com',
                 style: text,
               ),
@@ -72,18 +72,18 @@ class Contacts extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: const EdgeInsets.only(top: 20),
           child: Row(
             children: [
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.only(right: 12),
+                  margin: const EdgeInsets.only(right: 12),
                   child: MaterialButton(
-                    color: Color(0xFFFF9176),
+                    color: const Color(0xFFFF9176),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)),
                     onPressed: () => {},
-                    child: SizedBox(
+                    child: const SizedBox(
                         width: 100,
                         height: 44,
                         child: Center(
@@ -100,7 +100,7 @@ class Contacts extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                   onPressed: () => {},
-                  child: SizedBox(
+                  child: const SizedBox(
                       width: 100,
                       height: 44,
                       child: Center(

@@ -40,8 +40,8 @@ class AboutCompany extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(),
-              CircleAvatar(
+              const Spacer(),
+              const CircleAvatar(
                 radius: 22,
                 backgroundColor: Color(0xFF151840),
                 child: Text('A'),
@@ -50,7 +50,7 @@ class AboutCompany extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(bottom: 16),
+          margin: const EdgeInsets.only(bottom: 16),
           child: Row(
             children: [
               Text(

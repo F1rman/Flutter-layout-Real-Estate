@@ -1,15 +1,17 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../styles/style.dart';
 import '../widgets/bottom_navigation.dart';
-import '../widgets/my_button.dart';
 import '../widgets/slider_card.dart';
 import 'filter_search.dart';
 
+// ignore: must_be_immutable
 class HomeFilterResults extends StatelessWidget {
   HomeFilterResults({super.key});
-  CarouselController buttonCarouselController = CarouselController();
+  final CarouselController buttonCarouselController = CarouselController();
   var items = [1, 2, 3, 4, 5, 6];
   @override
   Widget build(BuildContext context) {
@@ -31,19 +33,19 @@ class HomeFilterResults extends StatelessWidget {
                         children: [
                           SliderCard(),
                           Container(
-                            margin: EdgeInsets.only(top: 20),
+                            margin: const EdgeInsets.only(top: 20),
                             child: Row(
                               children: [
                                 Expanded(
                                   child: Container(
-                                    margin: EdgeInsets.only(right: 12),
+                                    margin: const EdgeInsets.only(right: 12),
                                     child: MaterialButton(
-                                      color: Color(0xFFFF9176),
+                                      color: const Color(0xFFFF9176),
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(12)),
                                       onPressed: () => {},
-                                      child: SizedBox(
+                                      child: const SizedBox(
                                           width: 100,
                                           height: 44,
                                           child: Center(
@@ -61,7 +63,7 @@ class HomeFilterResults extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(12)),
                                     onPressed: () => {},
-                                    child: SizedBox(
+                                    child: const SizedBox(
                                         width: 100,
                                         height: 44,
                                         child: Center(
@@ -82,7 +84,7 @@ class HomeFilterResults extends StatelessWidget {
             ),
           ],
         ),
-        BottomNavigation(),
+        const BottomNavigation(),
       ]),
     );
   }

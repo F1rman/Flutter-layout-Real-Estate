@@ -1,7 +1,7 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../styles/style.dart';
 
 class SliderCardItemPage extends StatefulWidget {
   const SliderCardItemPage({
@@ -38,7 +38,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                       viewportFraction: 1,
                       height: 300.0,
                       onPageChanged: (index, reason) {
-                        print(index);
+                        // print(index);
                         setState(() {
                           slideIndex = index;
                         });
@@ -46,36 +46,33 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                   items: [1, 2, 3, 4, 5].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
-                        return Container(
-                          child: Stack(
-                            children: [
-                              Image.asset(
-                                'assets/img/slide_1.png',
-                                fit: BoxFit.cover,
-                                height: 300,
-                              ),
-                              Positioned(
-                                bottom: -1,
-                                left: -1,
-                                child: IgnorePointer(
-                                  ignoring: true,
-                                  child: Container(
-                                    height: 144,
-                                    width:
-                                        MediaQuery.of(context).size.width + 2,
-                                    decoration: const BoxDecoration(
-                                        gradient: LinearGradient(
-                                            colors: [
-                                          Colors.transparent,
-                                          Color(0xFF070817),
-                                        ],
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter)),
-                                  ),
+                        return Stack(
+                          children: [
+                            Image.asset(
+                              'assets/img/slide_1.png',
+                              fit: BoxFit.cover,
+                              height: 300,
+                            ),
+                            Positioned(
+                              bottom: -1,
+                              left: -1,
+                              child: IgnorePointer(
+                                ignoring: true,
+                                child: Container(
+                                  height: 144,
+                                  width: MediaQuery.of(context).size.width + 2,
+                                  decoration: const BoxDecoration(
+                                      gradient: LinearGradient(
+                                          colors: [
+                                        Colors.transparent,
+                                        Color(0xFF070817),
+                                      ],
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter)),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         );
                       },
                     );
@@ -114,7 +111,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                 Positioned(
                   top: 16,
                   left: 16,
-                  child: Container(
+                  child: SizedBox(
                     width: 44,
                     height: 44,
                     child: Material(
@@ -124,7 +121,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                       child: InkWell(
                         onTap: () => {Navigator.pop(context)},
                         child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: Image.asset(
                             'assets/img/back.png',
                           ),
@@ -162,7 +159,7 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                                   width: 20,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(left: 5),
+                                  margin: const EdgeInsets.only(left: 5),
                                   child: const Text(
                                     'Карта',
                                     style: TextStyle(

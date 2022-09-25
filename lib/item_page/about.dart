@@ -13,7 +13,7 @@ class About extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(bottom: 16),
+          margin: const EdgeInsets.only(bottom: 16),
           child: Row(
             children: [
               Text(
