@@ -2,6 +2,7 @@
 
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../styles/style.dart';
 import '../widgets/bottom_navigation.dart';
@@ -62,7 +63,8 @@ class HomeFilterResults extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(12)),
-                                    onPressed: () => {},
+                                    onPressed: () =>
+                                        {Get.toNamed('/feedback_form')},
                                     child: const SizedBox(
                                         width: 100,
                                         height: 44,

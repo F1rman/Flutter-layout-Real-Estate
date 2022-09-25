@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../styles/style.dart';
 
@@ -99,7 +100,7 @@ class Contacts extends StatelessWidget {
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
-                  onPressed: () => {},
+                  onPressed: () => {Get.toNamed('/feedback_form')},
                   child: const SizedBox(
                       width: 100,
                       height: 44,

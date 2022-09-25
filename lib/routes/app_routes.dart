@@ -6,6 +6,7 @@ abstract class Routes {
   static const splash = '/splash';
   static const saved = '/saved';
   static const feedback = '/feedback';
+  static const feedbackForm = '/feedback_form';
 }
 
 // abstract class _Paths {
