@@ -71,7 +71,15 @@ class MenuItem extends StatelessWidget {
       child: Obx(() => Opacity(
             opacity: c.index.value == items.indexOf(item) ? 1 : .4,
             child: MaterialButton(
-              onPressed: () => {c.index.value = items.indexOf(item)},
+              onPressed: () {
+                if (ModalRoute.of(context)!.settings.name == '/home') {
+                  c.index.value = items.indexOf(item);
+                } else {
+                  Get.toNamed('/home');
+                  c.index.value = items.indexOf(item);
+                }
+                print(ModalRoute.of(context)!.settings.name);
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

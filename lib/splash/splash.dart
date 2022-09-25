@@ -1,5 +1,6 @@
 import 'package:buildings/widgets/my_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../home/home_view.dart';
 import '../styles/style.dart';
@@ -70,13 +71,7 @@ class Splash extends StatelessWidget {
               child: MyButton(
                   width: 164.0,
                   text: 'Досліджувати',
-                  onPressed: () => {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => HomeView(),
-                          ),
-                        )
-                      }),
+                  onPressed: () => Get.toNamed('/home')),
             )
           ]),
         ],

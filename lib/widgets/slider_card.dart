@@ -1,3 +1,4 @@
+import 'package:buildings/widgets/my_icons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,22 @@ class SliderCard extends StatefulWidget {
 
 class _SliderCardState extends State<SliderCard> {
   var slideIndex = 0;
+  getSize(entry) {
+    var size = 6;
+    if (slideIndex == entry.key ||
+        slideIndex == entry.key + 2 ||
+        slideIndex == entry.key - 2 ||
+        slideIndex == entry.key + 1 ||
+        slideIndex == entry.key - 1) {
+      size = 6;
+    } else if (slideIndex == entry.key + 3 || slideIndex == entry.key - 3) {
+      size = 5;
+    } else {
+      size = 3;
+    }
+    return size.toDouble();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -132,9 +149,10 @@ class _SliderCardState extends State<SliderCard> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset(
-                                  'assets/img/map.png',
-                                  width: 15,
+                                Icon(
+                                  MyIcons.map,
+                                  size: 18,
+                                  color: Color(0xffFF9176),
                                 ),
                                 Container(
                                   margin: const EdgeInsets.only(left: 5),
@@ -145,7 +163,7 @@ class _SliderCardState extends State<SliderCard> {
                                       letterSpacing: -.24,
                                       color: Color(0xFFFFFFFF),
                                       fontSize: 11,
-                                      height: 1.35,
+                                      height: 1.1,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
@@ -185,19 +203,17 @@ class _SliderCardState extends State<SliderCard> {
                   left: 24,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
-                      return GestureDetector(
-                        onTap: () => widget.buttonCarouselController
-                            .animateToPage(entry.key),
-                        child: Container(
-                          width: slideIndex.toDouble() == entry.key ? 6 : 5,
-                          height: slideIndex.toDouble() == entry.key ? 6 : 5,
-                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white.withOpacity(
-                                  slideIndex == entry.key ? 1 : 0.4)),
-                        ),
+                      return AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        width: getSize(entry),
+                        height: getSize(entry),
+                        margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white.withOpacity(
+                                slideIndex == entry.key ? 1 : 0.4)),
                       );
                     }).toList(),
                   ),

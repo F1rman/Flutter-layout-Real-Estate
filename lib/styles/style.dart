@@ -20,6 +20,7 @@ const text = TextStyle(
   color: Colors.white,
   fontSize: 16,
   height: 1.3,
+  letterSpacing: -0.32,
   fontWeight: FontWeight.w400,
 );
 

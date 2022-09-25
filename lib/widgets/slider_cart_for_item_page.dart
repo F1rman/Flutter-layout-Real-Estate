@@ -17,6 +17,22 @@ class SliderCardItemPage extends StatefulWidget {
 
 class _SliderCardItemPageState extends State<SliderCardItemPage> {
   CarouselController buttonCarouselController = CarouselController();
+  getSize(entry) {
+    var size = 6;
+    if (slideIndex == entry.key ||
+        slideIndex == entry.key + 2 ||
+        slideIndex == entry.key - 2 ||
+        slideIndex == entry.key + 1 ||
+        slideIndex == entry.key - 1) {
+      size = 6;
+    } else if (slideIndex == entry.key + 3 || slideIndex == entry.key - 3) {
+      size = 5;
+    } else {
+      size = 3;
+    }
+    return size.toDouble();
+  }
+
   var slideIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -207,19 +223,17 @@ class _SliderCardItemPageState extends State<SliderCardItemPage> {
                   left: 24,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [1, 2, 3, 4, 5].asMap().entries.map((entry) {
-                      return GestureDetector(
-                        onTap: () =>
-                            buttonCarouselController.animateToPage(entry.key),
-                        child: Container(
-                          width: slideIndex.toDouble() == entry.key ? 6 : 5,
-                          height: slideIndex.toDouble() == entry.key ? 6 : 5,
-                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white.withOpacity(
-                                  slideIndex == entry.key ? 1 : 0.4)),
-                        ),
+                      return AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        width: getSize(entry),
+                        height: getSize(entry),
+                        margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white.withOpacity(
+                                slideIndex == entry.key ? 1 : 0.4)),
                       );
                     }).toList(),
                   ),

@@ -147,7 +147,7 @@ class ContactView extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: const [
-                              Text(
+                              SelectableText(
                                 '+380 68-021-83-22',
                                 style: text,
                               ),

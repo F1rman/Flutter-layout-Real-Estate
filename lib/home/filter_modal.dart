@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../styles/style.dart';
 import '../widgets/my_button.dart';
 import '../widgets/my_icons.dart';
@@ -14,6 +15,8 @@ class FilterModal extends StatefulWidget {
 }
 
 class _FilterModalState extends State<FilterModal> {
+  TextEditingController from = TextEditingController(text: '');
+  TextEditingController to = TextEditingController(text: '');
   var selected = ['3'];
   @override
   Widget build(BuildContext context) {
@@ -270,9 +273,20 @@ class _FilterModalState extends State<FilterModal> {
                               color: const Color(0xFF787880).withOpacity(.3),
                             ),
                             child: TextFormField(
+                              controller: from,
                               style: const TextStyle(color: Colors.white),
-                              onChanged: (value) {},
+                              onChanged: (value) {
+                                setState(() {});
+                              },
                               autovalidateMode: AutovalidateMode.always,
+                              keyboardType: TextInputType.number,
+                              inputFormatters: <TextInputFormatter>[
+                                // for below version 2 use this
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9]')),
+// for version 2 and greater youcan also use this
+                                FilteringTextInputFormatter.digitsOnly
+                              ],
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: 'Від',
@@ -297,8 +311,18 @@ class _FilterModalState extends State<FilterModal> {
                               color: const Color(0xFF787880).withOpacity(.3),
                             ),
                             child: TextFormField(
+                              controller: to,
                               style: const TextStyle(color: Colors.white),
-                              onChanged: (value) {},
+                              onChanged: (value) {
+                                setState(() {});
+                              },
+                              keyboardType: TextInputType.number,
+                              inputFormatters: <TextInputFormatter>[
+                                // for below version 2 use this
+                                FilteringTextInputFormatter.allow(
+                                    RegExp(r'[0-9]')),
+                                FilteringTextInputFormatter.digitsOnly
+                              ],
                               autovalidateMode: AutovalidateMode.always,
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
@@ -314,22 +338,31 @@ class _FilterModalState extends State<FilterModal> {
                               ),
                             ),
                           ),
-                          Container(
-                            margin: const EdgeInsets.only(
-                              left: 21,
-                            ),
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(100),
-                              onTap: () => {
-                                // print('clear')
-                              },
-                              child: Icon(
-                                MyIcons.crossIcon,
-                                color: Colors.white.withOpacity(.4),
-                                size: 17,
+                          AnimatedOpacity(
+                            duration: Duration(milliseconds: 300),
+                            opacity: to.text == '' && from.text == '' ? 0 : 1,
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                left: 13,
+                              ),
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(100),
+                                onTap: () {
+                                  to.clear();
+                                  from.clear();
+                                  setState(() {});
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(
+                                    MyIcons.crossIcon,
+                                    color: Colors.white.withOpacity(.4),
+                                    size: 17,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          )
                         ],
                       ),
                       MediaQuery.of(context).viewInsets.bottom != 0

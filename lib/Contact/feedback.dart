@@ -1,6 +1,8 @@
 import 'package:buildings/styles/style.dart';
 import 'package:buildings/widgets/my_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class Feedback extends StatefulWidget {
@@ -160,6 +162,13 @@ class _FeedbackState extends State<Feedback> {
                                 TextFormField(
                                   controller: telCtrl,
                                   onChanged: (e) => {setState(() {})},
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: <TextInputFormatter>[
+                                    // for below version 2 use this
+                                    FilteringTextInputFormatter.allow(
+                                        RegExp(r'[0-9]')),
+                                    FilteringTextInputFormatter.digitsOnly
+                                  ],
                                   style: const TextStyle(color: Colors.white),
                                   autovalidateMode: AutovalidateMode.always,
                                   decoration: const InputDecoration(
@@ -274,7 +283,24 @@ class _FeedbackState extends State<Feedback> {
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),
-                      onPressed: () => {},
+                      onPressed: () => {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Theme(
+                            data: ThemeData.dark(),
+                            child: CupertinoAlertDialog(
+                              title: Text("Запит успішно надіслано"),
+                              content: Text("Ми скоро вам зателефонуємо"),
+                              actions: <Widget>[
+                                CupertinoDialogAction(
+                                  onPressed: () => {Get.back()},
+                                  child: Text("OK"),
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      },
                       child: const Center(
                           child: Text(
                         'Надіслати запит',
