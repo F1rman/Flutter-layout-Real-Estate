@@ -2,12 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class SliderCardSmall extends StatefulWidget {
-  const SliderCardSmall({
+  SliderCardSmall({
     Key? key,
-    required this.buttonCarouselController,
+    this.isSavedPage,
   }) : super(key: key);
-
-  final CarouselController buttonCarouselController;
+  final isSavedPage;
+  CarouselController buttonCarouselController = CarouselController();
 
   @override
   State<SliderCardSmall> createState() => _SliderCardSmallState();
@@ -71,36 +71,38 @@ class _SliderCardSmallState extends State<SliderCardSmall> {
                   );
                 }).toList(),
               ),
-              Positioned(
-                top: 8,
-                right: 8,
-                child: Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(left: 7),
-                      width: 24,
-                      height: 24,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(8),
-                        color: const Color(0xFF090A1B),
-                        clipBehavior: Clip.antiAlias,
-                        child: InkWell(
-                          onTap: () {}, // button pressed
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/img/saved-icon.png',
-                                width: 13,
-                              ), // icon
-                            ],
+              widget.isSavedPage == false
+                  ? Positioned(
+                      top: 8,
+                      right: 8,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 7),
+                            width: 24,
+                            height: 24,
+                            child: Material(
+                              borderRadius: BorderRadius.circular(8),
+                              color: const Color(0xFF090A1B),
+                              clipBehavior: Clip.antiAlias,
+                              child: InkWell(
+                                onTap: () {}, // button pressed
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Image.asset(
+                                      'assets/img/saved-icon.png',
+                                      width: 13,
+                                    ), // icon
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-              ),
+                    )
+                  : Container(),
               Positioned(
                 left: 0,
                 right: 0,

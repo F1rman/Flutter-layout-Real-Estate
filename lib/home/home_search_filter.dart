@@ -3,7 +3,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import 'dart:math' as math;
 import '../styles/style.dart';
-import 'filter_modal.dart';
+import '../widgets/my_icons.dart';
 import 'filter_search.dart';
 import 'lang_dropdown.dart';
 import 'location_modal.dart';
@@ -59,9 +59,10 @@ class _HomeFilterSearchState extends State<HomeFilterSearch> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/img/location.png',
-                        width: 17,
+                      Icon(
+                        MyIcons.location,
+                        color: Color(0xffFF9176),
+                        size: 20,
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 10, right: 14),

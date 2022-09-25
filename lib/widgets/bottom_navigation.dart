@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/navigation_controller.dart';
+import 'my_icons.dart';
 
 class Items {
   final String name;
-  final String icon;
+  final IconData icon;
 
   Items(
     this.name,
@@ -15,9 +16,9 @@ class Items {
 }
 
 final items = [
-  Items('Головна', 'home-icon'),
-  Items('Збережені', 'saved-icon'),
-  Items('Контакти', 'contacts-icon'),
+  Items('Головна', MyIcons.home),
+  Items('Збережені', MyIcons.heart),
+  Items('Контакти', MyIcons.messages),
 ];
 
 class BottomNavigation extends StatelessWidget {
@@ -74,9 +75,11 @@ class MenuItem extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                      width: 24,
-                      child: Image.asset('assets/img/${item.icon}.png')),
+                  Icon(
+                    item.icon,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                   const SizedBox(
                     height: 5,
                   ),

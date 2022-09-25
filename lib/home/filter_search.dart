@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
+import '../widgets/my_icons.dart';
 import 'filter_modal.dart';
 
 class SearchFilter extends StatelessWidget {
@@ -31,9 +32,10 @@ class SearchFilter extends StatelessWidget {
                   left: 24,
                   child: Opacity(
                     opacity: .4,
-                    child: Image.asset(
-                      'assets/img/search-normal.png',
-                      width: 24,
+                    child: Icon(
+                      MyIcons.searchNormal,
+                      color: Colors.white,
+                      size: 24,
                     ),
                   ),
                 ),
@@ -66,10 +68,6 @@ class SearchFilter extends StatelessWidget {
           margin: const EdgeInsets.only(top: 20, left: 15),
           width: 56,
           decoration: BoxDecoration(
-            image: const DecorationImage(
-              image: ExactAssetImage('assets/img/filter.png'),
-              fit: BoxFit.contain,
-            ),
             borderRadius: BorderRadius.circular(10),
             color: const Color(0xFF090A1B),
             border: Border.all(
@@ -95,10 +93,11 @@ class SearchFilter extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/img/filter.png',
-                    width: 24,
-                  ), // icon
+                  Icon(
+                    MyIcons.filter,
+                    color: Colors.white,
+                    size: 24,
+                  ),
                 ],
               ),
             ),

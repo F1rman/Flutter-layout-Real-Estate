@@ -29,9 +29,7 @@ class HomeFilterResults extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 12),
                       child: Column(
                         children: [
-                          SliderCard(
-                              buttonCarouselController:
-                                  buttonCarouselController),
+                          SliderCard(),
                           Container(
                             margin: EdgeInsets.only(top: 20),
                             child: Row(

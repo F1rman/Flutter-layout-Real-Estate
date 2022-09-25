@@ -1,3 +1,4 @@
+import 'package:buildings/widgets/my_icons.dart';
 import 'package:flutter/material.dart';
 
 import '../home/home_view.dart';
@@ -18,15 +19,13 @@ class Splash extends StatelessWidget {
           Column(children: [
             Stack(children: [
               Positioned(
-                left: 34,
-                top: 56,
-                child: Image.asset(
-                  "assets/img/logo.png",
-                  fit: BoxFit.cover,
-                  height: 64,
-                  width: 66,
-                ),
-              ),
+                  left: 34,
+                  top: 56,
+                  child: Icon(
+                    MyIcons.logo,
+                    color: Colors.white,
+                    size: 64,
+                  )),
               Positioned(
                 child: Image.asset(
                   "assets/img/bg_1.png",

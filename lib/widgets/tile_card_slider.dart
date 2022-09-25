@@ -3,19 +3,17 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../styles/style.dart';
+import 'my_icons.dart';
 
 class TileCardSlider extends StatelessWidget {
-  const TileCardSlider({
+  TileCardSlider({
     Key? key,
-    required this.buttonCarouselController,
+    this.isSavedPage = false,
   }) : super(key: key);
-
-  final CarouselController buttonCarouselController;
-
+  final isSavedPage;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 12),
       height: 102,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -28,8 +26,7 @@ class TileCardSlider extends StatelessWidget {
         children: [
           SizedBox(
             width: 132,
-            child: SliderCardSmall(
-                buttonCarouselController: buttonCarouselController),
+            child: SliderCardSmall(isSavedPage: isSavedPage),
           ),
           Expanded(
             child: Container(
@@ -48,7 +45,7 @@ class TileCardSlider extends StatelessWidget {
                             fontFamily: 'SFProDisplay',
                             color: Colors.white,
                             letterSpacing: -.41,
-                            fontSize: 15,
+                            fontSize: 13,
                             height: 1.4,
                             fontWeight: FontWeight.w600,
                           ),
@@ -59,7 +56,7 @@ class TileCardSlider extends StatelessWidget {
                             fontFamily: 'SFProDisplay',
                             color: Colors.white,
                             letterSpacing: -.41,
-                            fontSize: 15,
+                            fontSize: 13,
                             height: 1.4,
                             fontWeight: FontWeight.w400,
                           ),
@@ -70,15 +67,16 @@ class TileCardSlider extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/img/location.png',
-                        width: 15,
+                      Icon(
+                        MyIcons.location,
+                        color: Color(0xffFF9176),
+                        size: 15,
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 6, right: 14),
                         child: Text(
                           'Київ, вул Фрометівська 12/4',
-                          style: greyText,
+                          style: greyText.copyWith(fontSize: 11),
                         ),
                       ),
                     ],
@@ -92,9 +90,10 @@ class TileCardSlider extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/img/roms.png',
-                              width: 15,
+                            Icon(
+                              MyIcons.roms,
+                              color: Colors.white,
+                              size: 15,
                             ),
                             Container(
                               margin: EdgeInsets.only(left: 7),
@@ -104,7 +103,7 @@ class TileCardSlider extends StatelessWidget {
                                   fontFamily: 'SFProDisplay',
                                   color: Colors.white,
                                   letterSpacing: 0.07,
-                                  fontSize: 15,
+                                  fontSize: 11,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -118,9 +117,10 @@ class TileCardSlider extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/img/area.png',
-                              width: 15,
+                            Icon(
+                              MyIcons.maximize,
+                              color: Colors.white,
+                              size: 15,
                             ),
                             Container(
                               margin: EdgeInsets.only(left: 7),
@@ -130,7 +130,7 @@ class TileCardSlider extends StatelessWidget {
                                   fontFamily: 'SFProDisplay',
                                   color: Colors.white,
                                   letterSpacing: 0.07,
-                                  fontSize: 15,
+                                  fontSize: 11,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),

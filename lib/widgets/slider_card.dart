@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import '../styles/style.dart';
 
 class SliderCard extends StatefulWidget {
-  const SliderCard({
+  SliderCard({
     Key? key,
-    required this.buttonCarouselController,
     this.click,
   }) : super(key: key);
 
-  final CarouselController buttonCarouselController;
+  CarouselController buttonCarouselController = CarouselController();
   final click;
 
   @override

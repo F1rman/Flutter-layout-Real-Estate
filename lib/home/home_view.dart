@@ -25,19 +25,16 @@ class HomeView extends StatelessWidget {
           children: [
             Column(
               children: [
-                Padding(
-                    padding:
-                        const EdgeInsets.only(left: 15, right: 15, bottom: 100),
-                    child: Obx(
-                      () => IndexedStack(
-                        index: c.index.value,
-                        children: [
-                          Home(),
-                          SavedView(),
-                          ContactView(),
-                        ],
-                      ),
-                    ))
+                Obx(
+                  () => IndexedStack(
+                    index: c.index.value,
+                    children: [
+                      Home(),
+                      SavedView(),
+                      ContactView(),
+                    ],
+                  ),
+                )
               ],
             ),
           ],

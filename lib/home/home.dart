@@ -12,52 +12,21 @@ class Home extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  CarouselController buttonCarouselController = CarouselController();
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          HomeFilterSearch(),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Рекомендовані',
-                    style: categotyHeadline,
-                  ),
-                  TextButton(
-                    onPressed: () => {},
-                    child: Text(
-                      'Більше',
-                      style: greyText,
-                    ),
-                  )
-                ],
-              ),
-              SliderCard(
-                  click: () => {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => ItemPage(),
-                          ),
-                        )
-                      },
-                  buttonCarouselController: buttonCarouselController),
-            ],
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 20),
-            child: Column(
+    return Padding(
+      padding: const EdgeInsets.only(left: 15, right: 15, bottom: 100),
+      child: Container(
+        child: Column(
+          children: [
+            HomeFilterSearch(),
+            Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      'Поряд з Вами',
+                      'Рекомендовані',
                       style: categotyHeadline,
                     ),
                     TextButton(
@@ -69,18 +38,48 @@ class Home extends StatelessWidget {
                     )
                   ],
                 ),
-                Column(
-                  children: [
-                    TileCardSlider(
-                        buttonCarouselController: buttonCarouselController),
-                    TileCardSlider(
-                        buttonCarouselController: buttonCarouselController),
-                  ],
+                SliderCard(
+                  click: () => {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ItemPage(),
+                      ),
+                    )
+                  },
                 ),
               ],
             ),
-          ),
-        ],
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Поряд з Вами',
+                        style: categotyHeadline,
+                      ),
+                      TextButton(
+                        onPressed: () => {},
+                        child: Text(
+                          'Більше',
+                          style: greyText,
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      TileCardSlider(),
+                      TileCardSlider(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
