@@ -22,90 +22,94 @@ class RentOption extends StatelessWidget {
             ],
           ),
         ),
-        Row(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(
-                right: 14,
-                top: 12,
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/img/roms.png',
-                    height: 26,
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              for (var i = 0; i < 10; i++)
+                Container(
+                  margin: const EdgeInsets.only(
+                    right: 14,
+                    top: 12,
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 12),
-                    child: const Text(
-                      '3км',
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Colors.white,
-                        letterSpacing: 0.07,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/img/roms.png',
+                        height: 26,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 12),
+                        child: const Text(
+                          '3км',
+                          style: TextStyle(
+                            fontFamily: 'SFProDisplay',
+                            color: Colors.white,
+                            letterSpacing: 0.07,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              Container(
+                margin: const EdgeInsets.only(
+                  right: 14,
+                  top: 12,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/img/area.png',
+                      height: 26,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 12),
+                      child: const Text(
+                        '56 м²',
+                        style: TextStyle(
+                          fontFamily: 'SFProDisplay',
+                          color: Colors.white,
+                          letterSpacing: 0.07,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                right: 14,
-                top: 12,
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/img/area.png',
-                    height: 26,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 12),
-                    child: const Text(
-                      '56 м²',
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Colors.white,
-                        letterSpacing: 0.07,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
+              Container(
+                margin: const EdgeInsets.only(
+                  right: 14,
+                  top: 12,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/img/bathroom.png',
+                      height: 32,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 12),
+                      child: const Text(
+                        '1 Душова кабіна',
+                        style: TextStyle(
+                          fontFamily: 'SFProDisplay',
+                          color: Colors.white,
+                          letterSpacing: 0.07,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                right: 14,
-                top: 12,
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/img/bathroom.png',
-                    height: 32,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 12),
-                    child: const Text(
-                      '1 Душова кабіна',
-                      style: TextStyle(
-                        fontFamily: 'SFProDisplay',
-                        color: Colors.white,
-                        letterSpacing: 0.07,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );

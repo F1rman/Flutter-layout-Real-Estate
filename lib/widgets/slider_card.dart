@@ -89,114 +89,117 @@ class _SliderCardState extends State<SliderCard> {
                                 ),
                               ),
                             ),
+                            const Positioned(
+                              bottom: 65,
+                              left: 24,
+                              child: Text(
+                                'ЖК Липки',
+                                style: TextStyle(
+                                  fontFamily: 'SFProDisplay',
+                                  color: Colors.white,
+                                  letterSpacing: -.41,
+                                  fontSize: 15,
+                                  height: 1.4,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            const Positioned(
+                              bottom: 35,
+                              left: 24,
+                              child: Text(
+                                'Від 1499\$ місяць',
+                                style: TextStyle(
+                                  fontFamily: 'SFProDisplay',
+                                  color: Colors.white,
+                                  letterSpacing: -.35,
+                                  fontSize: 20,
+                                  height: 1.5,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 16,
+                              right: 16,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 77,
+                                    height: 32,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: const Color(0xFF090A1B),
+                                      border: Border.all(
+                                        color: const Color(0xFF222230),
+                                      ),
+                                    ),
+                                    child: Material(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: const Color(0xFF090A1B),
+                                      clipBehavior: Clip.antiAlias,
+                                      child: InkWell(
+                                        onTap: () {}, // button pressed
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              MyIcons.map,
+                                              size: 18,
+                                              color: Color(0xffFF9176),
+                                            ),
+                                            Container(
+                                              margin: const EdgeInsets.only(
+                                                  left: 5),
+                                              child: const Text(
+                                                'Карта',
+                                                style: TextStyle(
+                                                  fontFamily: 'SFProDisplay',
+                                                  letterSpacing: -.24,
+                                                  color: Color(0xFFFFFFFF),
+                                                  fontSize: 11,
+                                                  height: 1.1,
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 7),
+                                    width: 32,
+                                    height: 32,
+                                    child: Material(
+                                      borderRadius: BorderRadius.circular(8),
+                                      color: const Color(0xFF090A1B),
+                                      clipBehavior: Clip.antiAlias,
+                                      child: InkWell(
+                                        onTap: () {}, // button pressed
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Image.asset(
+                                              'assets/img/saved-icon.png',
+                                              width: 15,
+                                            ), // icon
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         );
                       },
                     );
                   }).toList(),
-                ),
-                const Positioned(
-                  bottom: 65,
-                  left: 24,
-                  child: Text(
-                    'ЖК Липки',
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      color: Colors.white,
-                      letterSpacing: -.41,
-                      fontSize: 15,
-                      height: 1.4,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                const Positioned(
-                  bottom: 35,
-                  left: 24,
-                  child: Text(
-                    'Від 1499\$ місяць',
-                    style: TextStyle(
-                      fontFamily: 'SFProDisplay',
-                      color: Colors.white,
-                      letterSpacing: -.35,
-                      fontSize: 20,
-                      height: 1.5,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 16,
-                  right: 16,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 77,
-                        height: 32,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color(0xFF090A1B),
-                          border: Border.all(
-                            color: const Color(0xFF222230),
-                          ),
-                        ),
-                        child: Material(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color(0xFF090A1B),
-                          clipBehavior: Clip.antiAlias,
-                          child: InkWell(
-                            onTap: () {}, // button pressed
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  MyIcons.map,
-                                  size: 18,
-                                  color: Color(0xffFF9176),
-                                ),
-                                Container(
-                                  margin: const EdgeInsets.only(left: 5),
-                                  child: const Text(
-                                    'Карта',
-                                    style: TextStyle(
-                                      fontFamily: 'SFProDisplay',
-                                      letterSpacing: -.24,
-                                      color: Color(0xFFFFFFFF),
-                                      fontSize: 11,
-                                      height: 1.1,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 7),
-                        width: 32,
-                        height: 32,
-                        child: Material(
-                          borderRadius: BorderRadius.circular(8),
-                          color: const Color(0xFF090A1B),
-                          clipBehavior: Clip.antiAlias,
-                          child: InkWell(
-                            onTap: () {}, // button pressed
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/img/saved-icon.png',
-                                  width: 15,
-                                ), // icon
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
                 Positioned(
                   bottom: 17,

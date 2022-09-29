@@ -85,64 +85,68 @@ class TileCardSlider extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(
-                            right: 10,
-                            top: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                MyIcons.roms,
-                                color: Colors.white,
-                                size: 15,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          for (var i = 0; i < 10; i++)
+                            Container(
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                                top: 12,
                               ),
-                              Container(
-                                margin: const EdgeInsets.only(left: 7),
-                                child: const Text(
-                                  '3км',
-                                  style: TextStyle(
-                                    fontFamily: 'SFProDisplay',
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    MyIcons.roms,
                                     color: Colors.white,
-                                    letterSpacing: 0.07,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400,
+                                    size: 15,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 7),
+                                    child: const Text(
+                                      '3км',
+                                      style: TextStyle(
+                                        fontFamily: 'SFProDisplay',
+                                        color: Colors.white,
+                                        letterSpacing: 0.07,
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          Container(
+                            margin: const EdgeInsets.only(
+                              top: 12,
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  MyIcons.maximize,
+                                  color: Colors.white,
+                                  size: 15,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(left: 7),
+                                  child: const Text(
+                                    '104 м²',
+                                    style: TextStyle(
+                                      fontFamily: 'SFProDisplay',
+                                      color: Colors.white,
+                                      letterSpacing: 0.07,
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(
-                            top: 12,
-                          ),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                MyIcons.maximize,
-                                color: Colors.white,
-                                size: 15,
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(left: 7),
-                                child: const Text(
-                                  '104 м²',
-                                  style: TextStyle(
-                                    fontFamily: 'SFProDisplay',
-                                    color: Colors.white,
-                                    letterSpacing: 0.07,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   ],
                 ),
