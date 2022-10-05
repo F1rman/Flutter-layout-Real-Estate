@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../item_page/item_page.dart';
 import '../styles/style.dart';
 import '../widgets/slider_card.dart';
+import '../widgets/slider_card_static.dart';
 import '../widgets/tile_card_slider.dart';
 import 'home_search_filter.dart';
 
@@ -40,7 +41,7 @@ class Home extends StatelessWidget {
                           )
                         ],
                       ),
-                      SliderCard(
+                      SliderCardStatic(
                         click: () => {
                           Navigator.of(context).push(
                             MaterialPageRoute(
